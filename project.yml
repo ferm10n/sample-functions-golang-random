@@ -1,11 +1,11 @@
 parameters: {}
 environment: {}
 packages:
-  - name: sample
+  - name: bot
     environment: {}
     parameters: {}
     actions:
-      - name: random
+      - name: main
         main: ''
         runtime: 'go:default'
         environment: {}

@@ -1,17 +1,19 @@
-package main
+package lib
 
 import (
 	"fmt"
 	"math/rand"
 	"time"
+
+	"rsc.io/quote"
 )
 
 const (
 	// upperBound is the upper bound of the random int range
-	upperBound = 101
+	upperBound = 1001
 )
 
-func init() {
+func Init() {
 	rand.Seed(time.Now().Unix())
 }
 
@@ -27,7 +29,9 @@ type Response struct {
 }
 
 func Main(in Request) (*Response, error) {
+	fmt.Println(quote.Go())
 	return &Response{
-		Body: fmt.Sprintf("Hello, your random number is %d", rand.Intn(upperBound)),
+		StatusCode: 200,
+		Body:       fmt.Sprintf("Hello, your random number is %d", rand.Intn(upperBound)),
 	}, nil
 }
