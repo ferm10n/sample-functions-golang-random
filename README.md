@@ -22,8 +22,10 @@ git clone git@github.com:digitalocean/sample-functions-golang-random.git
 Deploy the project, using a remote build so that compiled executable matches the runtime environment:
 
 ```shell
-doctl serverless deploy sample-functions-golang-random --remote-build
+doctl serverless deploy . --remote-build
 ```
+
+*NOTE: you'll probably get a few prompts to go through before it succeeds, for first time setup*
 
 The output from the deploy command will resemble the following:
 
