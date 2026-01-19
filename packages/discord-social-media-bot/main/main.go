@@ -1,7 +1,7 @@
 package main
 
 import (
-	"bot/main/lib"
+	"discord-social-media-bot/main/lib"
 )
 
 func init() {

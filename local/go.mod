@@ -1,10 +1,10 @@
-module bot/local
+module discord-social-media-bot/local
 
 go 1.23
 
-replace bot/main => ../packages/bot/main
+replace discord-social-media-bot/main => ../packages/discord-social-media-bot/main
 
-require bot/main v0.0.0-00010101000000-000000000000
+require discord-social-media-bot/main v0.0.0-00010101000000-000000000000
 
 require (
 	golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c // indirect

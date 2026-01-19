@@ -1,4 +1,4 @@
-module bot/main
+module discord-social-media-bot/main
 
 go 1.23
 

@@ -1,12 +1,11 @@
-parameters: {}
-environment: {}
 packages:
-  - name: bot
-    environment: {}
-    parameters: {}
-    actions:
+  - name: discord-social-media-bot
+    functions:
       - name: main
-        main: ''
         runtime: 'go:default'
-        environment: {}
-        parameters: {}
+        # this breaks DO app platform deployment outright!
+        triggers: # NOTE! doesn't work because of doctl bug https://github.com/digitalocean/doctl/issues/1474
+          - name: gong
+            sourceType: scheduler
+            sourceDetails: 
+              cron: 0 * * * *
