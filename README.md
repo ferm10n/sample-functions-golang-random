@@ -5,7 +5,9 @@ This was originally forked from the [Sample Function: Go "Random"](https://githu
 - Fork this repo
 - create devcontainer (you can use github codespaces for this!)
 - create free neondb database and get the connection string (or some other way to get a postgres url)
-- Put in .env: `DB_URL=your-connection-string`
+- Put in .env:
+    - `APP_DB_URL=your-connection-string`
+    - `APP_SECRET=some-secret-value` <- this is how you will access the web interface of the app
 - `doctl serverless deploy .`
 - manually create the schedule trigger
 

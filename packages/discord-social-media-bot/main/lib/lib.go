@@ -2,9 +2,11 @@ package lib
 
 import (
 	"fmt"
+	"log"
 	"math/rand"
 	"time"
 
+	"github.com/kelseyhightower/envconfig"
 	"rsc.io/quote"
 )
 
@@ -28,7 +30,18 @@ type Response struct {
 	Body       string            `json:"body,omitempty"`
 }
 
+type EnvSpec struct {
+	DB_URL string `required:"true"`
+	SECRET string `required:"true"`
+}
+
 func Main(in Request) (*Response, error) {
+	var env EnvSpec
+	err := envconfig.Process("app", &env)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	fmt.Println(quote.Go())
 	return &Response{
 		StatusCode: 200,
